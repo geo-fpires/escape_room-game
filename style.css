@@ -14,13 +14,19 @@ body {
   background: #000;
 }
 
-/* Fundo com a cena do crime */
-body::before {
-  content: "";
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Special Elite', monospace;
+  color: #f5f5f5;
+}
+
+/* Fundo fixo, também em celular */
+.bg-fixed {
   position: fixed;
   inset: 0;
   background: url("background.jpg") center center / cover no-repeat;
-  background-attachment: fixed;
   filter: brightness(0.55);
   z-index: -2;
 }
