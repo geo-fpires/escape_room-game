@@ -15,31 +15,31 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 1,
       story: 'At 7:00 p.m., Ms. Rodrigues was sitting on the reception. She was waiting for someone, but she looked very nervous. She was tapping her foot and checking her watch. There were two other students there, but they were listening to music and didn’t notice her. Ms. Rodrigues thought, “Maybe I should talk to the secretary about the book I wanted to borrow,” and then she stood up.',
       question: 'According to the story, what did Ms. Rodrigues think she should do?',
-      coverImage: 'clue_car.jpg'
+      coverImage: 'clue_card.jpg'
     },
     {
       id: 2,
       story: 'At 7:10 p.m., Ms. Rodrigues arrived at the secretary desk. She said, “I would like to borrow a book from the language shelf.” The secretary answered, “You can borrow a book, but you should be careful. Some books are very old and very heavy.” Ms. Rodrigues smiled and said, “Don’t worry, I will be careful,” and then she walked away.',
       question: 'What does the secretary say Ms. Rodrigues should be?',
-      coverImage: 'clue_car.jpg'
+      coverImage: 'clue_card.jpg'
     },
     {
       id: 3,
       story: 'At the language bookshelf, there were many books in different languages. Some books were small, but some were very big and heavy. Ms. Rodrigues chose one of the heaviest books, called “Great Crimes of the World”. She thought, “Maybe I shouldn’t carry this book alone, but I don’t have time to ask for help.” She took the book anyway and started walking to the main corridor.',
       question: 'What do you think Ms. Rodrigues shouldn’t do in this situation?',
-      coverImage: 'clue_car.jpg'
+      coverImage: 'clue_card.jpg'
     },
     {
       id: 4,
       story: 'At 7:20 p.m., Ms. Rodrigues was walking slowly along the main corridor, still carrying the heavy book. A student later said, “Ms. Rodrigues looked very worried. A few minutes later, I saw Mr. Bertolaccini. He was walking very fast towards the small garden. He wasn’t wearing his glasses, I think. He should probably wear his glasses at night, because the corridor is dark.”',
       question: 'What does the student think Mr. Bertolaccini should do at night?',
-      coverImage: 'clue_car.jpg'
+      coverImage: 'clue_card.jpg'
     },
     {
       id: 5,
       story: 'At 7:25 p.m., a student was looking at the plants in the small garden. Suddenly, they heard a loud noise from the corridor. It sounded like a heavy object falling on the floor. The student thought, “I should go and check, but I am scared.” They stayed in the garden and only watched. They saw a shadow moving quickly towards the bathrooms.',
       question: 'What did the student think they should do after hearing the loud noise?',
-      coverImage: 'clue_car.jpg'
+      coverImage: 'clue_card.jpg'
     }
   ];
 
