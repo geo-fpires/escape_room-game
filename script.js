@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
       id: 1,
       story: 'At 7:00 p.m., Ms. Rodrigues was sitting on the reception. She was waiting for someone, but she looked very nervous. She was tapping her foot and checking her watch. There were two other students there, but they were listening to music and didn’t notice her. Ms. Rodrigues thought, “Maybe I should talk to the secretary about the book I wanted to borrow,” and then she stood up.',
       question: 'According to the story, what did Ms. Rodrigues think she should do?',
-      coverImage: 'clue_1.png'
+      coverImage: 'clue_1.jpg'
     },
     {
       id: 2,
