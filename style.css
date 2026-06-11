@@ -1,0 +1,264 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Special Elite', monospace;
+  color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+/* Fundo com a cena do crime */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("background.jpg") center center / cover no-repeat;
+  filter: brightness(0.55);
+  z-index: -2;
+}
+
+.overlay {
+  width: 100%;
+  max-width: 480px;
+  padding: 24px;
+  margin: 0 auto;
+}
+
+.card-wrapper {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ─────────── CARD ─────────── */
+
+.card {
+  width: 100%;
+  max-width: 320px;
+  min-height: 460px;         /* altura mínima */
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+  cursor: pointer;
+}
+
+/* Estado virado */
+.card.flipped {
+  transform: rotateY(180deg);
+}
+
+/* Faces em geral */
+.card-face {
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+  backface-visibility: hidden;
+}
+
+/* Frente: cobre totalmente o card, imagem controlada via JS */
+.card-front {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Verso: ESTA é a “caixa preta” flexível */
+.card-back {
+  position: relative;
+  transform: rotateY(180deg);
+  background-color: rgba(0, 0, 0, 0.88);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ─────────── CONTEÚDO DA PISTA ─────────── */
+
+.clue-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 280px;
+}
+
+.clue-story {
+  font-size: 15px;
+  margin-bottom: 15px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.question-area {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.clue-question {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#answer-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #777;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f5f5f5;
+  font-family: 'Special Elite', monospace;
+  font-size: 14px;
+  text-align: center;
+}
+
+#answer-input::placeholder {
+  color: #aaa;
+}
+
+#submit-answer {
+  background-color: #c61300;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Special Elite', monospace;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+#submit-answer:hover {
+  background-color: #800c00;
+}
+
+#submit-answer:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+/* Área de mensagens / painel do professor ocupa largura inteira do verso */
+.message-area {
+  width: 100%;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.message-area.success {
+  color: #2ecc71;
+}
+
+.message-area.error {
+  color: #e74c3c;
+}
+
+/* ─────────── PAINEL DO PROFESSOR ─────────── */
+
+.teacher-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.teacher-label {
+  font-size: 12px;
+  color: #aaa;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.student-answer-display {
+  font-size: 14px;
+  color: #f5f5f5;
+  font-style: italic;
+  margin: 0 0 6px 0;
+  text-align: center;
+}
+
+#password-input {
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #777;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #f5f5f5;
+  font-family: 'Special Elite', monospace;
+  font-size: 14px;
+  text-align: center;
+}
+
+.teacher-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+#confirm-btn {
+  background-color: #008237;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Special Elite', monospace;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#confirm-btn:hover {
+  background-color: #006229;
+}
+
+#cancel-btn {
+  background-color: #c61300;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Special Elite', monospace;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+#cancel-btn:hover {
+  background-color: #800c00;
+}
+
+.password-error {
+  color: #e74c3c;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ─────────── RESPONSIVO ─────────── */
+
+@media (max-width: 480px) {
+  .card {
+    min-height: 440px;
+  }
+  .clue-story {
+    font-size: 14px;
+  }
+  .clue-question {
+    font-size: 15px;
+  }
+}
